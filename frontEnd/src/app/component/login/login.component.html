@@ -1,0 +1,28 @@
+<div class="container">
+  <div class="row">
+    <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
+      <div class="card card-signin my-5">
+        <div class="card-body">
+          <h5 class="card-title text-center">Sign In</h5>
+          <div *ngIf="error != ''" class="alert alert-danger">{{error}}</div>
+          <form class="form-signin" (ngSubmit)="onLogin()">
+            <div class="form-label-group">
+              <label for="inputEmail">Username</label>
+              <input [(ngModel)]="user.userName" name="userName" type="text" class="form-control" placeholder="Username" required autofocus>              
+            </div>
+
+            <div class="form-label-group">
+              <label for="inputPassword">Password</label>
+              <input [(ngModel)]="user.password" name="password" type="password" class="form-control" placeholder="Password" required>              
+            </div>
+
+            <button class="btn btn-lg btn-primary btn-block text-uppercase" type="submit" >Sign in</button>
+            <hr class="my-4">
+            <button class="btn btn-lg btn-google btn-block text-uppercase" type="submit" routerLink="/component/register">Register</button>
+            
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

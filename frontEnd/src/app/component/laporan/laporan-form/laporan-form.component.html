@@ -1,0 +1,27 @@
+<div class="card">
+  <div class="card-body">
+    <form [formGroup]="laporanForm" (ngSubmit)="onSubmit()">
+      <div class="form-group">
+        <label>Judul Laporan</label>
+        <input formControlName="judulLaporan" [(ngModel)]="laporan.judulLaporan" type="text" class="form-control col-md-6" placeholder="Judul Laporan">
+        <div class="alert alert-danger col-md-6" *ngIf="f.judulLaporan.touched && !f.judulLaporan.valid" >
+          <div *ngIf="f.judulLaporan.errors">
+            <div *ngIf="f.judulLaporan.errors.required">Judul laporan wajib diisi!</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label>Keterangan</label>
+        <textarea formControlName="keterangan" [(ngModel)]="laporan.keterangan" class="form-control" placeholder="Keterangan laporan"></textarea>
+        <div class="alert alert-danger col-md-6" *ngIf="f.keterangan.touched && !f.keterangan.valid" >
+          <div *ngIf="f.keterangan.errors">
+            <div *ngIf="f.keterangan.errors.required">Keterangan laporan wajib diisi!</div>
+          </div>
+        </div>
+      </div>
+
+      <button type="submit"  class="btn btn-primary">Submit</button>
+    </form>
+  </div>
+</div>
